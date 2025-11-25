@@ -3,6 +3,14 @@ import { Button } from "@/components/ui/button";
 import Layout from "../layouts/Layout.astro";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Tecnologies from "@/modules/index/components/Tecnologies.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -59,7 +67,7 @@ import { Separator } from "@/components/ui/separator";
               transition:name="vidan"
               src="/src/assets/vidan.png"
               alt="vidan"
-              class="w-full rounded-xl shadow-lg"
+              class="w-full rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2.5 hover:transform"
             />
           </div>
         </a>
@@ -74,16 +82,17 @@ import { Separator } from "@/components/ui/separator";
         </p>
       </div>
       <div class="flex flex-col gap-2">
-        <a>
+        <a href="./portfolio/vidan-app">
           <div class="aspect-video w-full">
             <img
+              transition:name="vidan-app"
               src="/src/assets/vidan-app.png"
               alt="vidan"
-              class="mb-4 w-full rounded-xl shadow-lg"
+              class="w-full rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2.5 hover:transform"
             />
           </div>
         </a>
-        <p class="text-md font-semibold">
+        <p class="text-md font-semibold" transition:name="vidan-app-title">
           Vidan - Aplicación Móvil (React Native, Expo, REST API)
         </p>
         <p class="text-muted-foreground">
@@ -94,6 +103,25 @@ import { Separator } from "@/components/ui/separator";
         </p>
       </div>
     </div>
+
+    <Separator className="my-20" orientation="horizontal" />
+
+    <!-- Tecnologías -->
+    <Tecnologies />
+
+    <Separator className="my-20" orientation="horizontal" />
+
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-center text-2xl">Lo que hago</CardTitle>
+      </CardHeader>
+      <CardContent className="text-center">
+        Desarrollo soluciones completas centradas en negocio: desde interfaces
+        modernas, APIs escalables, apps móviles publicadas y paneles
+        administrativos, hasta despliegues en la nube. Me gusta crear productos
+        que realmente se usan en empresas y generan valor inmediato.
+      </CardContent>
+    </Card>
 
     <Separator className="my-20" orientation="horizontal" />
   </div>

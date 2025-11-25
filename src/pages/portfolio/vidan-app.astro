@@ -1,0 +1,188 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import CarrouselApp from "@/modules/portfolio/vidan-mobile/components/carrousel-app";
+import CarrouselImages from "@/modules/portfolio/vidan-web/components/carrousel-images";
+---
+
+<Layout>
+  <div class="container mx-auto px-4 py-12 md:px-8">
+    <!-- Header Section -->
+    <div class="mb-12 space-y-4">
+      <div class="flex flex-wrap items-center gap-3">
+        <h1
+          transition:name="vidan-app-title"
+          class="text-4xl font-bold tracking-tight md:text-5xl"
+        >
+          Vidan - Aplicación Móvil (React Native, Expo, REST API)
+        </h1>
+      </div>
+      <p class="text-muted-foreground max-w-2xl text-xl">
+        App móvil diseñada para que los empleados gestionen su asistencia,
+        solicitudes y notificaciones desde cualquier lugar.
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="mb-12">
+      <img
+        transition:name="vidan-app"
+        src="/src/assets/vidan-app.png"
+        alt="Vidan App"
+        class="mx-auto w-full max-w-4xl rounded-xl border shadow-2xl"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="mx-auto mb-12 max-w-3xl">
+      <p class="text-muted-foreground text-center text-lg leading-relaxed">
+        La aplicación móvil de Vidan facilita que los empleados registren su
+        entrada y salida, envíen solicitudes de vacaciones y reciban avisos en
+        tiempo real. Diseñada para ser ligera, intuitiva y accesible desde
+        cualquier dispositivo Android o iOS.
+      </p>
+    </div>
+
+    <!-- Features and Technologies Grid -->
+    <div class="mb-12 grid gap-8 md:grid-cols-2">
+      <!-- Features Card -->
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-2xl">Características principales</CardTitle
+          >
+          <CardDescription>
+            Funcionalidades diseñadas para mejorar la experiencia del empleado
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Reloj checador con geolocalización</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Registro de entrada y salida en tiempo real</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Solicitudes de vacaciones y permisos desde la app</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Notificaciones instantáneas de avisos de la empresa</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Consulta del historial de asistencias</span>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <!-- Technologies Card -->
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-2xl">Stack tecnológico</CardTitle>
+          <CardDescription>
+            Base tecnológica moderna para una experiencia fluida
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="space-y-4">
+            <div>
+              <h4 class="text-muted-foreground mb-2 text-sm font-semibold">
+                Frontend móvil
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="outline">React Native</Badge>
+                <Badge variant="outline">Expo</Badge>
+                <Badge variant="outline">Expo Router</Badge>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-muted-foreground mb-2 text-sm font-semibold">
+                Backend
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="outline">NestJS</Badge>
+                <Badge variant="outline">REST API</Badge>
+                <Badge variant="outline">PostgreSQL</Badge>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="flex justify-center gap-4">
+      <Card className="w-full max-w-[700px]">
+        <CardHeader>
+          <CardTitle className="text-2xl">Descargar aplicación</CardTitle>
+          <CardDescription>
+            Disponible para dispositivos Android y iOS. Accede a todas las
+            funcionalidades desde tu teléfono.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p class="mb-4">Enlaces de descarga oficiales:</p>
+
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <a
+                class="hover:text-primary underline"
+                href="https://play.google.com/store/apps/details?id=com.victormgc.vidanhrm"
+                target="_blank"
+              >
+                Google Play Store (Android)
+              </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <a
+                class="hover:text-primary underline"
+                href="https://apps.apple.com/us/app/vidan-hrm/id6755367226"
+                target="_blank"
+              >
+                App Store (iOS)
+              </a>
+            </li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <Button className="shadow-md">
+            <a
+              href="https://vidan-system.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sitio oficial de Vidan
+            </a>
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+
+    <Separator orientation="horizontal" className="my-8" />
+
+    <!-- Galería de imagenes -->
+    <h3 class="mx-auto text-center text-2xl font-bold">Galería de imágenes</h3>
+    <div
+      class="mx-auto flex aspect-auto w-[80%] items-center justify-center sm:w-[60%]"
+    >
+      <CarrouselApp client:load />
+    </div>
+  </div>
+</Layout>
