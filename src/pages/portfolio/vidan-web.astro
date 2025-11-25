@@ -6,9 +6,12 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import CarrouselImages from "@/modules/portfolio/vidan-web/components/carrousel-images";
 ---
 
 <Layout>
@@ -121,16 +124,51 @@ import {
     </div>
 
     <!-- CTA Button -->
-    <div class="flex gap-4">
-      <Button asChild size="lg" className="shadow-md">
-        <a
-          href="https://vidan-system.me/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ver demo del Panel Web
-        </a>
-      </Button>
+    <div class="flex justify-center gap-4">
+      <Card className="w-full max-w-[700px]">
+        <CardHeader>
+          <CardTitle className="text-2xl">Ver demo</CardTitle>
+          <CardDescription>
+            Explora el panel web de Vidan y descubre sus funcionalidades en
+            acción.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>Credenciales para el usuario demo:</p>
+
+          <ul>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Correo: usuariotest@vidan.me</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Contaseña: Prueba123</span>
+            </li>
+          </ul>
+        </CardContent>
+        <CardFooter>
+          <Button className="shadow-md">
+            <a
+              href="https://vidan-system.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Panel web Vidan HRM
+            </a>
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+
+    <Separator orientation="horizontal" className="my-8" />
+
+    <!-- Galería de imagenes -->
+    <h3 class="mx-auto text-center text-2xl font-bold">Galería de imágenes</h3>
+    <div
+      class="mx-auto flex aspect-video w-[80%] items-center justify-center sm:w-[60%]"
+    >
+      <CarrouselImages client:load />
     </div>
   </div>
 </Layout>
