@@ -1,5 +1,8 @@
 ---
+import { Button } from "@/components/ui/button";
 import Layout from "../layouts/Layout.astro";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import { Separator } from "@/components/ui/separator";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -7,11 +10,91 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <nav
-    class="grid h-12 w-full grid-cols-[1rf_5rf] items-center border border-b border-gray-300 shadow"
+    class="sticky hidden h-12 w-full items-center border-b border-gray-300 px-8 shadow sm:grid sm:grid-cols-[1fr_5fr] dark:border-neutral-700"
   >
     <div>
       <h1 class="text-md font-semibold">Víctor MGC</h1>
     </div>
-    <p>Hola</p>
+    <div class="ml-auto">
+      <Button variant="link" className="hover:cursor-pointer">Inicio</Button>
+      <Button variant="link" className="hover:cursor-pointer">Portafolio</Button
+      >
+      <Button variant="link" className="hover:cursor-pointer"
+        >Habilidades</Button
+      >
+      <Button variant="link" className="hover:cursor-pointer">Sobre mi</Button>
+      <!-- <ModeToggle client:load /> -->
+    </div>
   </nav>
+  <div class="px-8">
+    <!-- Presentación Inicio -->
+    <main class="grid grid-cols-1 items-center gap-6 sm:grid-cols-[2fr_1fr]">
+      <div class="animate-fade-in mt-10 flex flex-col gap-6 sm:mt-0">
+        <h2 class="text-4xl font-bold">Víctor Manuel González Cabrera</h2>
+        <p class="mt-4text-lg">
+          Desarrollador Full Stack especializado en React, Node.js y .NET, con
+          experiencia construyendo y migrando aplicaciones empresariales.
+          Creador de Vidan HRM System, solución multi-tenant usada por clientes
+          reales y con app publicada en App Store. Desarrollo productos
+          completos (frontend, backend, mobile y despliegue) enfocados en
+          soluciones escalables y orientadas al negocio. Disponible para roles
+          presenciales, híbridos o remotos en México.
+        </p>
+      </div>
+      <img
+        src="/src/assets/Profile.jpg"
+        alt="Foto de Víctor Manuel González Cabrera"
+        class="animate-fade-in mx-auto mt-0 h-62 w-62 rounded-full object-cover object-[50%_20%] sm:mt-10 sm:h-auto sm:w-full sm:rounded-xl"
+      />
+    </main>
+
+    <Separator className="my-20" orientation="horizontal" />
+
+    <h3 class="mb-4 text-3xl font-semibold">Portafolio</h3>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div class="flex flex-col gap-2">
+        <a href="./portfolio/vidan-web">
+          <div class="aspect-video w-full">
+            <img
+              transition:name="vidan"
+              src="/src/assets/vidan.png"
+              alt="vidan"
+              class="w-full rounded-xl shadow-lg"
+            />
+          </div>
+        </a>
+        <p class="text-md font-semibold" transition:name="vidan-web-title">
+          Vidan - Panel Web (React, Tailwind, REST API)
+        </p>
+        <p class="text-muted-foreground">
+          Permite administrar empleados, controlar asistencias, aprobar
+          solicitudes (vacaciones, permisos, préstamos), generar reportes y
+          gestionar notificaciones internas. Integrado con una API REST diseñada
+          para microempresas.
+        </p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <a>
+          <div class="aspect-video w-full">
+            <img
+              src="/src/assets/vidan-app.png"
+              alt="vidan"
+              class="mb-4 w-full rounded-xl shadow-lg"
+            />
+          </div>
+        </a>
+        <p class="text-md font-semibold">
+          Vidan - Aplicación Móvil (React Native, Expo, REST API)
+        </p>
+        <p class="text-muted-foreground">
+          Permite registrar asistencia, visualizar recibos de nómina, solicitar
+          vacaciones o permisos, consultar avisos de la empresa y revisar su
+          información laboral. Enfocada en facilidad de uso y comunicación
+          directa entre empleado y empresa.
+        </p>
+      </div>
+    </div>
+
+    <Separator className="my-20" orientation="horizontal" />
+  </div>
 </Layout>

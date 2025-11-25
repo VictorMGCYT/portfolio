@@ -1,0 +1,136 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+---
+
+<Layout>
+  <div class="container mx-auto px-4 py-12 md:px-8">
+    <!-- Header Section -->
+    <div class="mb-12 space-y-4">
+      <div class="flex flex-wrap items-center gap-3">
+        <h1
+          transition:name="vidan-web-title"
+          class="text-4xl font-bold tracking-tight md:text-5xl"
+        >
+          Vidan - Panel Web (React, Tailwind, REST API)
+        </h1>
+      </div>
+      <p class="text-muted-foreground max-w-2xl text-xl">
+        Sistema de recursos humanos diseñado para microempresas en México
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="mb-12">
+      <img
+        transition:name="vidan"
+        src="/src/assets/vidan.png"
+        alt="Panel de control Vidan"
+        class="mx-auto w-full max-w-4xl rounded-xl border shadow-2xl"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="mx-auto mb-12 max-w-3xl">
+      <p class="text-muted-foreground text-center text-lg leading-relaxed">
+        Panel web que permite al área de RRHH administrar empleados, monitorear
+        asistencias, gestionar solicitudes y generar reportes de manera ágil y
+        moderna. Construido con tecnologías web modernas para ofrecer una
+        experiencia fluida y eficiente.
+      </p>
+    </div>
+
+    <!-- Features and Technologies Grid -->
+    <div class="mb-12 grid gap-8 md:grid-cols-2">
+      <!-- Features Card -->
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-2xl">Características principales</CardTitle
+          >
+          <CardDescription
+            >Funcionalidades diseñadas para optimizar la gestión de RRHH</CardDescription
+          >
+        </CardHeader>
+        <CardContent>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Gestión completa de empleados</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Control de asistencias y reloj checador</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Aprobación de vacaciones y permisos</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Notificaciones internas para empleados</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-primary">•</span>
+              <span>Autenticación y roles (administrador, RH, empleado)</span>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <!-- Technologies Card -->
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-2xl">Stack tecnológico</CardTitle>
+          <CardDescription
+            >Tecnologías modernas para una aplicación robusta</CardDescription
+          >
+        </CardHeader>
+        <CardContent>
+          <div class="space-y-4">
+            <div>
+              <h4 class="text-muted-foreground mb-2 text-sm font-semibold">
+                Frontend
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="outline">React (Next.js)</Badge>
+                <Badge variant="outline">TailwindCSS</Badge>
+                <Badge variant="outline">Shadcn</Badge>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-muted-foreground mb-2 text-sm font-semibold">
+                Backend
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <Badge variant="outline">NestJS</Badge>
+                <Badge variant="outline">REST API</Badge>
+                <Badge variant="outline">PostgreSQL</Badge>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="flex gap-4">
+      <Button asChild size="lg" className="shadow-md">
+        <a
+          href="https://vidan-system.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver demo del Panel Web
+        </a>
+      </Button>
+    </div>
+  </div>
+</Layout>
